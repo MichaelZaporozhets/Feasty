@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<title>Feasty</title>
+
+	<link href="style.css" rel="stylesheet" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKU7-SJBXt_ZACv6PuMD-VOXqt0A8LYI4&libraries=places" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/postcodes.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<img class="logo" src="images/logo.png" />
+					</div>
+					<div class="col-md-6">
+						<div class="ready" style="display:none;">
+							<div class="pull-right">
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<div class="checkbox openNow">
+											<label>
+												<input type="checkbox" checked=""> Show Stores Open Now
+											</label>
+										</div>
+										<button class="refresh btn btn-default" type="button"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="information">
+			<h4></h4>
+		</div>
+		<div class="progressBar"></div>
+		<div class="container-fluid main">
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="starterconfig">
+						<h2>Enter your Address</h2>
+						<div class="gmapsearch">
+							<input class="postcodeInput" id="autocomplete" placeholder="Enter your address" type="text"></input>
+							<button>Feast</button>
+						</div>
+
+						<div class="boxybox">
+							<h4>Partners</h4>
+							<div class="partnerOption">
+								<input type="checkbox" name="ml" />
+								<span>Menulog</span>
+							</div>
+							<div class="partnerOption">
+								<input type="checkbox" name="dh" />
+								<span>Delivery Hero</span>
+							</div>
+							<div class="partnerOption">
+								<input type="checkbox" name="fd" />
+								<span>Foodora</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="loading" style="display: none;">
+						<h2>Loading..</h2>
+					</div>
+				</div>
+			</div>
+			<div class="ready" style="display:none;">
+				<div class="data row">
+					<div class="col-md-12">
+						<h4></h4>
+						<div class="combined">
+							<div class="container-fluid">
+								<div class="categoryContainer col-md-2">
+									<h3>Categories</h3>
+									<input type="text" class="form-control searchUl" placeholder="Search.." data-target=".categories">
+									<br />
+									<ul class="categories list-group"></ul>
+								</div>
+								<div class="storesContainer col-md-4">
+									<h3>Stores</h3>
+									<div class="row">
+										<div class="col-md-6">
+											<input type="text" class="form-control searchUl" placeholder="Search.." data-target=".stores">
+										</div>
+										<div class="col-md-6">
+											<div class="storesOrderBy dropdown">
+												<button class="btn btn-default dropdown-toggle" type="button" id="storesOrderBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+													<span class="title">Order By</span>
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" aria-labelledby="storesOrderBy">
+													<li><a class="orderByName" href="#">Name</a></li>
+													<li><a class="orderByRating" href="#">Rating</a></li>
+													<li><a href="#">Something else here</a></li>
+													<li><a href="#">Separated link</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<br />
+									<ul class="stores list-group"></ul>
+								</div>
+								<div class="storeContainer col-md-6 storeView">
+									<h3>Store</h3>
+									<div class="loading" style="display:hidden;">
+										<h4>Loading..</h4>
+									</div>
+									<div class="ready">
+										<iframe></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="log"></div>
+	</body>
+</html>
